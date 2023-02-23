@@ -37,10 +37,10 @@ public void draw()
    background(203, 227, 250);
    fill(255, 253, 205); 
    ellipse(100, 100, 50, 50);
-   setBranch(10);
    strokeWeight(3);
    stroke(208, 255, 197);   
    line(400,700,400,550); 
+   setBranch(10);
    drawBranches(400,550,100,3*Math.PI/2);
    setBranch(50);
  
