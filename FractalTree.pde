@@ -25,7 +25,7 @@ public void draw()
   ellipse(700, 570, 80, 80);
   fill(0);
   ellipse(700, 650, 10, 10);
-  ellipse(700, 630, 10, 10);
+  ellipse(700, 670, 10, 10);
   
   
   for (int i = 0; i < snowfall.length; i++) {
@@ -37,10 +37,10 @@ public void draw()
    background(203, 227, 250);
    fill(255, 253, 205); 
    ellipse(100, 100, 50, 50);
+   setBranch(10);
    strokeWeight(3);
    stroke(208, 255, 197);   
    line(400,700,400,550); 
-   setBranch(10);
    drawBranches(400,550,100,3*Math.PI/2);
    setBranch(50);
  
@@ -62,14 +62,17 @@ public void drawBranches(int x,int y, double branchLength, double angle)
    drawBranches(endX1, endY1, branchLength*fractionLength, angle1);
    drawBranches(endX2, endY2, branchLength*fractionLength, angle2); 
 }
+ if(mousePressed) {
+  stroke(232, 222, 255);
+  ellipse(endX1, endY2, 5, 5);
+  stroke(255, 232, 222);
+  ellipse(endX2, endY2, 4, 4); 
+  stroke(208, 255, 197);   
+}
 }
 
 public void setBranch(int n) {
   smallestBranch = n;
-}
-
-public void setFraction(double i) {
-  fractionLength = i;
 }
 
 public int getBranch() {
